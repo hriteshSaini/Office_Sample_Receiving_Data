@@ -9,14 +9,14 @@
 <body>
   <div class="container">
     <div class="logo-container">
-        <img src="mati_logo.png" alt="Mati Logo" class="logo">
+        <img src="mati_logo.png" alt="Mati Logo" class="logo" width="180" posi >
     </div>
     <div class="scanner">
       <video id="qr-video" width="300" height="200"></video>
-      <button id="scan-button">Start Scanning</button>
+      <button id="scan-button"><h3>Start Scanning Samples</h3></button>
     </div>
     <div class="delivery-info">
-      <label for="delivery-person">Select Delivery Person:</label>
+      <label for="delivery-person">Select Field Person who delivered the sample:</label>
       <select id="delivery-person">
         <option value="Bhagwat Prasad Yadav">Bhagwat Prasad Yadav</option>
         <option value="Deepak Kushwaha">Deepak Kushwaha</option>
@@ -29,8 +29,8 @@
       </select>
     </div>
     <div class="results">
-      <h2>Scanned QR Codes</h2>
-      <table id="qr-table">
+      <h2>Scanned Samples</h2>
+      <table id="qr-table" style="margin: 0 10px 0 10px; width: 95%;">
         <thead>
           <tr>
             <th>#</th>  
@@ -41,7 +41,7 @@
           <!-- Scanned QR codes will appear here -->
         </tbody>
       </table>
-      <button id="send-whatsapp">Send via WhatsApp</button>
+      <button id="send-whatsapp">WhatsApp Hritesh!</button>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
