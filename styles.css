@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .scanner {
+    margin-bottom: 20px;
+  }
+  
+  #qr-video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #223315; /* Updated border color */
+    border-radius: 5px;
+  }
+  
+  #scan-button, #send-whatsapp {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #223315; /* Updated background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  #scan-button:hover, #send-whatsapp:hover {
+    background: #1a2810; /* Darker shade for hover effect */
+  }
+  
+  .delivery-info {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #223315; /* Updated border color */
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #223315; /* Updated border color */
+  }
+  
+  th {
+    background-color: #223315; /* Updated background color */
+    color: white;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+  
+    #qr-video {
+      max-width: 100%;
+    }
+  
+    #scan-button, #send-whatsapp {
+      max-width: 100%;
+    }
+  
+    select {
+      max-width: 100%;
+    }
+  
+    .results {
+      overflow-x: auto;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  }

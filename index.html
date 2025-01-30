@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+        <img src="mati_logo.png" alt="Mati Logo" class="logo">
+    </div>
+    <div class="scanner">
+      <video id="qr-video" width="300" height="200"></video>
+      <button id="scan-button">Start Scanning</button>
+    </div>
+    <div class="delivery-info">
+      <label for="delivery-person">Select Delivery Person:</label>
+      <select id="delivery-person">
+        <option value="Bhagwat Prasad Yadav">Bhagwat Prasad Yadav</option>
+        <option value="Deepak Kushwaha">Deepak Kushwaha</option>
+        <option value="Deepak Sonwani">Deepak Sonwani</option>
+        <option value="Kishun Lal">Kishun Lal</option>
+        <option value="Somesh Kumar Kashyap">Somesh Kumar Kashyap</option>
+        <option value="Udit Narayan">Udit Narayan</option>
+        <option value="Vimal Kumar">Vimal Kumar</option>
+        <option value="Vivek Gujjar">Vivek Gujjar</option>
+      </select>
+    </div>
+    <div class="results">
+      <h2>Scanned QR Codes</h2>
+      <table id="qr-table">
+        <thead>
+          <tr>
+            <th>#</th>  
+            <th>QR Code Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Scanned QR codes will appear here -->
+        </tbody>
+      </table>
+      <button id="send-whatsapp">Send via WhatsApp</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
