@@ -46,12 +46,13 @@ body {
     margin-top: 10px;
     padding: 10px 20px;
     background: #223315; /* Updated background color */
-    color: white;
+    color: coral;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
     max-width: 300px;
+    
   }
   
   #scan-button:hover, #send-whatsapp:hover {
