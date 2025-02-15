@@ -119,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to open WhatsApp
   function openWhatsApp() {
+    overlay.classList.add('hidden');
+    sendWhatsAppButton.disabled = false;
     const phoneNumber = '+918504971728'; // Replace with the recipient's phone number
     const deliveryPerson = deliveryPersonDropdown.value;
 
@@ -149,7 +151,26 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // Show the overlay and spinner
+    const overlay = document.getElementById('overlay');
+    overlay.classList.remove('hidden');
+
+    // Disable the button to prevent multiple clicks
+    sendWhatsAppButton.disabled = true;
+
     // Send data to Google Sheet first
-    sendToGoogleSheet();
+    sendToGoogleSheet()
+      .then(() => {
+        openWhatsApp();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      })
+      .finally(() => {
+        // Ensure spinner is hidden in case of error
+        overlay.classList.add('hidden');
+        sendWhatsAppButton.disabled = false;
+      });
   });
 });
