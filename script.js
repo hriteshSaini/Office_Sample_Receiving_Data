@@ -77,14 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to add scanned QR code data to the table
   function addQRToTable(data) {
     scanCount++;
-    scannedData.push(data.split("=")[1]); // Store data for WhatsApp
+    
+    // Extract code from either ?key=value or /path/value format
+    let code;
+    if (data.includes("=")) {
+      code = data.split("=").pop();
+    } else if (data.includes("/")) {
+      code = data.split("/").pop();
+    } else {
+      code = data; // fallback if it's plain text
+    }
+  
+    // Store for WhatsApp
+    scannedData.push(code);
+  
+    // Add to table
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${scanCount}</td>
-      <td>${data.split("=")[1]}</td>
+      <td>${code}</td>
     `;
     qrTableBody.appendChild(row);
   }
+
 
   // Function to send data to Google Sheet
   function sendToGoogleSheet() {
@@ -174,4 +189,5 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
 
